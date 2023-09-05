@@ -1,14 +1,14 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class hotels_has_bedtype extends Model {
-    static associate({ hotels_has_rooms }) {
-      this.hasMany(hotels_has_rooms, { foreignKey: "rooms_has_bedtype_id" });
+  class location extends Model {
+    static associate({ hotels }) {
+      this.hasMany(hotels, { foreignKey: "locations_id" });
     }
   }
-  hotels_has_bedtype.init(
+  location.init(
     {
-      name: DataTypes.STRING,
+      city: DataTypes.STRING,
       createdAt: {
         type: DataTypes.DATE,
         defaultValue: sequelize.literal("CURRENT_TIMESTAMP"),
@@ -20,8 +20,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "hotels_has_bedtype",
+      modelName: "location",
     }
   );
-  return hotels_has_bedtype;
+  return location;
 };

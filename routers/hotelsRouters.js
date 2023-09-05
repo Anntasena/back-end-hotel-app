@@ -1,9 +1,9 @@
 const express = require("express");
 const Router = express.Router();
 
-// Import Controller
-const { hotelsControllers } = require("./../controllers"); // Akan otomatis membaca index.js nya
+// Import All Controller
+const { hotelsControllers } = require("../controllers");
 
-Router.get("/", hotelsControllers.findRooms);
+Router.get("/", hotelsControllers.search);
 
 module.exports = Router;

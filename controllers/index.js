@@ -1,5 +1,7 @@
-const hotelsController = require('./hotelsControllers');
+const usersControllers = require('./usersControllers');
+const hotelsControllers = require('./hotelsControllers');
 
 module.exports = {
-    hotelsController
+    usersControllers,
+    hotelsControllers
 }
